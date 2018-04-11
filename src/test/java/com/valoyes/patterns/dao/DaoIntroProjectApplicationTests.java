@@ -15,12 +15,29 @@ public class DaoIntroProjectApplicationTests {
 	@Autowired
 	EmployeeDAO employeeDao;
 	
+	@Autowired
+	StudentPrivateSchoolDAO studentDao;
+	
 	@Test
 	public void test_createMethod() {
 		Employee employee = new Employee();
 		employee.setId(345);
 		employee.setName("Elito");
 		employeeDao.create(employee);
+	}
+	
+	@Test
+	public void test_createStudent() {
+		StudentPrivateSchool student = new StudentPrivateSchool();
+		student.setId(2);
+		student.setName("Tom Riddle");
+		student.setSchoolName("Slytherin");
+		studentDao.create(student);
+	}
+	
+	@Test
+	public void tes_deleteStudent() {
+		studentDao.delete(2);
 	}
 
 }
