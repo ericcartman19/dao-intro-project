@@ -13,7 +13,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	@Override
 	public void create(Employee employee) {
 
-		String sql = "insert into employee value(?, ?)";
+		String sql = "insert into employee values(?, ?)";
 		jdbcTemplate.update(sql, employee.getId(), employee.getName());
 		
 	}
